@@ -54,7 +54,25 @@
   - генерации follow-up вопросов
 - DummyLLM — fallback для локального запуска без API-ключа
 
----
+## Логирование
+
+Для каждого сценария интервью формируется JSON-файл следующей структуры:
+
+```json
+{
+  "participant_name": "ФИО кандидата",
+  "turns": [
+    {
+      "turn_id": 1,
+      "agent_visible_message": "Вопрос интервьюера",
+      "user_message": "Ответ кандидата",
+      "internal_thoughts": "[Observer]: ...\n[Interviewer]: ...\n"
+    }
+  ],
+  "final_feedback": "Структурированный фидбэк"
+}
+
+```
 
 ## Запуск проекта
 
