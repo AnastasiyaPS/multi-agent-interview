@@ -1,0 +1,30 @@
+{
+  "participant_name": "Марина Игоревна",
+  "turns": [
+    {
+      "turn_id": 1,
+      "agent_visible_message": "Что такое идемпотентность? Какие HTTP-методы идемпотентны?",
+      "user_message": "Идемпотентность — это свойство, когда повторный одинаковый запрос не изменяет состояние системы; идемпотентные HTTP-методы: GET, PUT, DELETE, HEAD, OPTIONS.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 2,
+      "agent_visible_message": "Как работает HTTP-кеширование (ETag/Cache-Control) и какие подводные камни бывают?",
+      "user_message": "HTTP-кеширование использует заголовки Cache-Control для управления временем жизни кэша и ETag для проверки актуальности ресурса. Подводные камни: неверная настройка Cache-Control (например, кэширование личных данных), сложности с инвалидацией кэша при обновлениях, разное поведение браузеров и прокси.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 3,
+      "agent_visible_message": "Как бы ты ограничивал(а) rate limit на API? Где хранить состояние?",
+      "user_message": "Rate limit на API можно ограничить, используя токены в Redis с фиксированным окном или скользящим окном, проверяя количество запросов по ключу (IP/user ID) и возвращая 429 Too Many Requests при превышении.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 4,
+      "agent_visible_message": "Как работает механизм CORS и как его можно настроить на стороне клиента и сервера?",
+      "user_message": "CORS разрешает кросс-доменные запросы через заголовки (Access-Control-Allow-Origin). На сервере настраивается отправкой правильных заголовков, на клиенте — использованием простых или предзапросов (preflight), но клиент не может отключить CORS без доступа к серверу.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    }
+  ],
+  "final_feedback": "## A) Decision\n- Grade: **Middle**\n- Hiring Recommendation: **Strong Hire**\n- Confidence Score: **85%**\n\n## B) Hard Skills (Technical Review)\n- **http**\n  - ✅ Confirmed Skills: 4\n    - Пример: Q: Что такое идемпотентность? Какие HTTP-методы идемпотентны? | A: Идемпотентность — это свойство, когда повторный одинаковый запрос не изменяет состояние системы; идемпотентные HTTP-методы: GET, PUT, DELETE, HEAD, OPTIONS.\n\n## C) Soft Skills & Communication\n- Clarity: в целом хорошо: ответы чаще структурные (good=2, weak=0).\n- Honesty: честное «не знаю» — нормально; плохо, когда вместо ответа идёт уход в сторону.\n- Engagement: встречные вопросы от кандидата: 0.\n- Focus: оффтопика почти не было — плюс.\n\n## D) Next Steps (Roadmap)\n- Явных технических провалов по заданным вопросам не видно. Следующий шаг — расширить покрытие тем и усложнить кейсы."
+}

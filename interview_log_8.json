@@ -1,0 +1,42 @@
+{
+  "participant_name": "Данила",
+  "turns": [
+    {
+      "turn_id": 1,
+      "agent_visible_message": "Что такое goroutine и чем она отличается от потока?",
+      "user_message": "Горутина — это легковесный поток, управляемый рантаймом Go (M:N модель), который потребляет меньше памяти и создаётся быстрее, чем поток ОС, но работает поверх потоков ОС.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=verifier(conf=95)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 2,
+      "agent_visible_message": "Что такое interface в Go? Как проверяется соответствие интерфейсу?",
+      "user_message": "Интерфейс в Go — это тип, который определяет набор методов; любой тип, реализующий эти методы, автоматически удовлетворяет интерфейсу, обеспечивая полиморфизм.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 3,
+      "agent_visible_message": "Как бы ты спроектировал(а) worker pool в Go? Какие edge-cases учтёшь?",
+      "user_message": "Создал бы канал для задач, запустил фиксированное число воркеров-горутин, которые читают из канала и обрабатывают, и использовал бы WaitGroup для ожидания их завершения.",
+      "internal_thoughts": "[Observer]: kind=NORMAL diff=SAME reason=verifier(conf=80)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 4,
+      "agent_visible_message": "Какие edge-cases ты бы учёл при реализации worker pool?",
+      "user_message": "не знаю ",
+      "internal_thoughts": "[Observer]: kind=WEAK diff=DOWN reason=verifier(conf=90)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 5,
+      "agent_visible_message": "Можешь привести примеры edge-cases, которые могут возникнуть в других системах?",
+      "user_message": "нет ",
+      "internal_thoughts": "[Observer]: kind=WEAK diff=DOWN reason=verifier(conf=80)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 6,
+      "agent_visible_message": "Чем отличается slice от array в Go?",
+      "user_message": "Массив (array) имеет фиксированный размер, известный на этапе компиляции, а слайс (slice) — это динамическая обёртка над массивом, которая может менять размер и хранит указатель, длину и вместимость.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    }
+  ],
+  "final_feedback": "## A) Decision\n- Grade: **Junior**\n- Hiring Recommendation: **Hire**\n- Confidence Score: **70%**\n\n## B) Hard Skills (Technical Review)\n- **go**\n  - ✅ Confirmed Skills: 3\n    - Пример: Q: Что такое goroutine и чем она отличается от потока? | A: Горутина — это легковесный поток, управляемый рантаймом Go (M:N модель), который потребляет меньше памяти и создаётся быстрее, чем поток ОС, но работает поверх потоков ОС.\n  - ❌ Knowledge Gaps: 2\n    - Вопрос: Какие edge-cases ты бы учёл при реализации worker pool?\n      Ответ: не знаю\n    - Вопрос: Можешь привести примеры edge-cases, которые могут возникнуть в других системах?\n      Ответ: нет\n\n## C) Soft Skills & Communication\n- Clarity: в целом хорошо: ответы чаще структурные (good=3, weak=2).\n- Honesty: честное «не знаю» — нормально; плохо, когда вместо ответа идёт уход в сторону.\n- Engagement: встречные вопросы от кандидата: 0.\n- Focus: оффтопика почти не было — плюс.\n\n## D) Next Steps (Roadmap)\n- Темы для подтягивания по результатам интервью:\n  - go: закрыть пробелы по вопросам из раздела Hard Skills (5–10 практических задач)."
+}

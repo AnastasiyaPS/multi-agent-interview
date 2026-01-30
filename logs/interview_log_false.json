@@ -1,0 +1,141 @@
+{
+  "participant_name": "даша",
+  "session_meta": {
+    "llm_provider": "mistral",
+    "llm_model": "mistral-small-latest",
+    "started_at": "2026-01-30T14:55:33.407324+00:00",
+    "position": "велосипедист",
+    "grade": "профи",
+    "experience": "5 лет",
+    "initial_tech_stack": []
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "agent_visible_message": "Чем отличается GET от POST?",
+      "user_message": "люблю кататься на велосипеде",
+      "internal_thoughts": [
+        {
+          "role": "Observer",
+          "content": "Intro: стартуем с вопроса по основному стеку."
+        },
+        {
+          "role": "Orchestrator",
+          "content": "ask(bank/gen) topic=http diff=easy primary=None"
+        }
+      ],
+      "meta": {
+        "kind": "INTRO",
+        "topic": "http",
+        "source": "bank/gen",
+        "question_answered": null,
+        "question_asked": "Чем отличается GET от POST?"
+      }
+    },
+    {
+      "turn_id": 2,
+      "agent_visible_message": "Давайте вернемся к вопросу: чем отличается GET от POST?",
+      "user_message": "хочу велосипед",
+      "internal_thoughts": [
+        {
+          "role": "Observer",
+          "content": "kind=OFFTOPIC diff=DOWN reason=verifier(conf=100)"
+        },
+        {
+          "role": "Orchestrator",
+          "content": "answered=http next_hint=http chosen_source=bank/gen diff=easy followup_streak=0"
+        },
+        {
+          "role": "Interviewer",
+          "content": "Вывод: bridge/fact + ровно 1 вопрос"
+        }
+      ],
+      "meta": {
+        "kind": "OFFTOPIC",
+        "topic": "http",
+        "source": "bank/gen",
+        "question_answered": "Чем отличается GET от POST?",
+        "question_asked": "Что означает код ответа 404 и 500?"
+      }
+    },
+    {
+      "turn_id": 3,
+      "agent_visible_message": "Пожалуйста, ответьте на вопрос, что означают коды 404 и 500.\nЧто такое headers и для чего они нужны?",
+      "user_message": "я не понимаю зачем тебе это",
+      "internal_thoughts": [
+        {
+          "role": "Observer",
+          "content": "kind=REFUSAL diff=DOWN reason=verifier(conf=100)"
+        },
+        {
+          "role": "Orchestrator",
+          "content": "answered=http next_hint=http chosen_source=bank/gen diff=easy followup_streak=0"
+        },
+        {
+          "role": "Interviewer",
+          "content": "Вывод: bridge/fact + ровно 1 вопрос"
+        }
+      ],
+      "meta": {
+        "kind": "REFUSAL",
+        "topic": "http",
+        "source": "bank/gen",
+        "question_answered": "Что означает код ответа 404 и 500?",
+        "question_asked": "Что такое headers и для чего они нужны?"
+      }
+    },
+    {
+      "turn_id": 4,
+      "agent_visible_message": "Что такое HTTP и для чего он используется?",
+      "user_message": "нет",
+      "internal_thoughts": [
+        {
+          "role": "Observer",
+          "content": "kind=REFUSAL diff=DOWN reason=verifier(conf=100)"
+        },
+        {
+          "role": "Orchestrator",
+          "content": "answered=http next_hint=http chosen_source=bank/gen diff=easy followup_streak=0"
+        },
+        {
+          "role": "Interviewer",
+          "content": "Вывод: bridge/fact + ровно 1 вопрос"
+        }
+      ],
+      "meta": {
+        "kind": "REFUSAL",
+        "topic": "http",
+        "source": "bank/gen",
+        "question_answered": "Что такое headers и для чего они нужны?",
+        "question_asked": "Что такое HTTP и для чего он используется?"
+      }
+    },
+    {
+      "turn_id": 5,
+      "agent_visible_message": "Давайте вернемся к вопросу о HTTP.\nКакие основные методы HTTP вы знаете?",
+      "user_message": "не знаю, в конькобежном спорте",
+      "internal_thoughts": [
+        {
+          "role": "Observer",
+          "content": "kind=OFFTOPIC diff=DOWN reason=verifier(conf=100)"
+        },
+        {
+          "role": "Orchestrator",
+          "content": "answered=http next_hint=http chosen_source=bank/gen diff=easy followup_streak=0"
+        },
+        {
+          "role": "Interviewer",
+          "content": "Вывод: bridge/fact + ровно 1 вопрос"
+        }
+      ],
+      "meta": {
+        "kind": "OFFTOPIC",
+        "topic": "http",
+        "source": "bank/gen",
+        "question_answered": "Что такое HTTP и для чего он используется?",
+        "question_asked": "Какие основные методы HTTP вы знаете?"
+      }
+    }
+  ],
+  "final_feedback": "## A) Decision\n- Grade: **Junior**\n- Hiring Recommendation: **No Hire**\n- Confidence Score: **30%**\n\n## B) Hard Skills (Technical Review)\n- **http**\n  - ⚠️ Off-topic/уход от вопроса: 2\n    - Пример: Q: Чем отличается GET от POST? | A: хочу велосипед\n\n## C) Soft Skills & Communication\n- Clarity: есть проблемы: ответы часто короткие/обрывочные (good=0, weak=1).\n- Honesty: честное «не знаю» — нормально; плохо, когда вместо ответа идёт уход в сторону.\n- Engagement: встречные вопросы от кандидата: 0.\n- Focus: были попытки сменить тему/оффтопик: 2 (снижает оценку коммуникации).\n\n## D) Next Steps (Roadmap)\n- Явных технических провалов по заданным вопросам не видно. Следующий шаг — расширить покрытие тем и усложнить кейсы.\n- Отдельно: тренировать дисциплину ответа (сначала по вопросу, потом уточнения/контекст)."
+}

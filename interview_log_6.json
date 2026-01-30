@@ -1,0 +1,36 @@
+{
+  "participant_name": "Дарья",
+  "turns": [
+    {
+      "turn_id": 1,
+      "agent_visible_message": "INNER JOIN vs LEFT JOIN — в чём разница? Приведи пример запроса.",
+      "user_message": "INNER JOIN возвращает только строки с совпадениями в обеих таблицах, LEFT JOIN — все строки из левой таблицы, а если нет совпадения справа, то NULL. Пример: ",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 2,
+      "agent_visible_message": "Как бы ты оптимизировал(а) медленный запрос? Какие шаги (EXPLAIN/ANALYZE, индексы, переписывание)?",
+      "user_message": "SELECT * FROM users LEFT JOIN orders ON users.id = orders.user_id;",
+      "internal_thoughts": "[Observer]: kind=OFFTOPIC diff=DOWN reason=verifier(conf=90)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 3,
+      "agent_visible_message": "Какие инструменты и методы ты используешь для анализа и оптимизации SQL-запросов?",
+      "user_message": "Для анализа запросов я использую EXPLAIN и EXPLAIN ANALYZE для просмотра плана выполнения, а для оптимизации — создание индексов, переписывание запросов (например, избегание SELECT *), использование временных таблиц и анализ статистики с помощью pg_stat_statements.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 4,
+      "agent_visible_message": "Что такое deadlock и как его диагностировать/минимизировать?",
+      "user_message": "Deadlock — это взаимная блокировка процессов, ожидающих ресурсы друг друга. Для диагностики используются логи СУБД, запросы к системным представлениям (например, pg_locks в PostgreSQL), инструменты мониторинга. Минимизировать deadlock можно через упорядоченное блокирование ресурсов, уменьшение времени транзакций, использование индексов для быстрого доступа и снижение уровня изоляции транзакций.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    },
+    {
+      "turn_id": 5,
+      "agent_visible_message": "Как оптимизировать сложный SQL-запрос с множеством JOIN-ов и подзапросов?",
+      "user_message": "Оптимизировать такой запрос можно, заменив подзапросы на JOIN или CTE, создав индексы на ключевых полях соединения и фильтрации, проанализировав план выполнения через EXPLAIN, разбив запрос на временные таблицы и убрав лишние столбцы из SELECT.",
+      "internal_thoughts": "[Observer]: kind=STRONG diff=UP reason=relevant answer (guardrail)\n[Interviewer]: Сформулировать краткий вывод и задать следующий вопрос по теме.\n"
+    }
+  ],
+  "final_feedback": "## A) Decision\n- Grade: **Middle**\n- Hiring Recommendation: **Hire**\n- Confidence Score: **75%**\n\n## B) Hard Skills (Technical Review)\n- **sql**\n  - ✅ Confirmed Skills: 4\n    - Пример: Q: INNER JOIN vs LEFT JOIN — в чём разница? Приведи пример запроса. | A: INNER JOIN возвращает только строки с совпадениями в обеих таблицах, LEFT JOIN — все строки из левой таблицы, а если нет совпадения справа, то NULL. Пример:\n  - ⚠️ Off-topic/уход от вопроса: 1\n    - Пример: Q: Как бы ты оптимизировал(а) медленный запрос? Какие шаги (EXPLAIN/ANALYZE, индексы, переписывание)? | A: SELECT * FROM users LEFT JOIN orders ON users.id = orders.user_id;\n\n## C) Soft Skills & Communication\n- Clarity: в целом хорошо: ответы чаще структурные (good=2, weak=0).\n- Honesty: честное «не знаю» — нормально; плохо, когда вместо ответа идёт уход в сторону.\n- Engagement: встречные вопросы от кандидата: 0.\n- Focus: были попытки сменить тему/оффтопик: 1 (снижает оценку коммуникации).\n\n## D) Next Steps (Roadmap)\n- Явных технических провалов по заданным вопросам не видно. Следующий шаг — расширить покрытие тем и усложнить кейсы.\n- Отдельно: тренировать дисциплину ответа (сначала по вопросу, потом уточнения/контекст)."
+}
